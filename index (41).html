@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THREE MONTHS</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f9c5d1;
+      color: #000;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Bangers', cursive;
+      font-size: 3rem;
+      color: #000;
+      margin: 10px 0;
+    }
+
+    pre {
+      background: none;
+      color: #000;
+      font-size: 15px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px auto;
+      max-width: 1200px;
+      flex-wrap: wrap;
+    }
+
+    .polaroid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      padding: 10px;
+      background-color: #fff;
+      width: 300px;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .polaroid img,
+    .polaroid video {
+      width: 100%;
+      height: 85%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .polaroid-caption {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .text-area {
+      margin: 20px auto;
+      padding: 10px;
+      max-width: 800px;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .flower {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-image: url('https://static.vecteezy.com/system/resources/previews/012/446/726/non_2x/flower-red-rose-free-png.png');
+      background-size: cover;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background"></div>
+
+  <h1>DE: REBECA RODRIGUES</h1>
+  <h1>PARA: ISAQUE MADEIRO</h1>
+  <pre>
+three months do nossos quase "Felizes para sempre"!
+  </pre>
+
+  <div class="container">
+    <div class="polaroid">
+      <video controls>
+        <source src="video.mp4.mp4" type="video/mp4">
+        Seu navegador não suporta o vídeo.
+      </video>
+      <div class="polaroid-caption">Nós <3</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="Isaque e Rebeca.jpg" alt="<3">
+      <div class="polaroid-caption">Nós <3</div>
+    </div>
+
+    <div class="polaroid">
+      <img src="Isaque e Rebeca 4.jpg.jpg" alt="<3">
+      <div class="polaroid-caption">Nós <3</div>
+    </div>
+  </div>
+
+  <div class="text-area">
+    <p>Eu só queria dizer que sei o quanto deve ser difícil lidar comigo, mas, nesses três meses eu vejo o quão Deus foi bondoso por ter colocado você na minha vida. Não só porque você é um bom namorado, mas porque você é meu melhor amigo nas horas vagas! Feliz mêsversário, eu te amo 91x mais.❤️ </p>
+  </div>
+
+  <script>
+    const background = document.querySelector('.background');
+
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random() * 100 + 'vw'; 
+      flower.style.animationDuration = Math.random() * 5 + 5 + 's'; 
+      background.appendChild(flower);
+
+      
+      flower.addEventListener('animationend', () => {
+        flower.remove();
+      });
+    }
+
+   
+    setInterval(createFlower, 500);
+  </script>
+</body>
+
+</html>
